@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #0f0f13;
+  --bg2:      #16161d;
+  --bg3:      #1e1e28;
+  --bg4:      #25252f;
+  --border:   #2e2e3a;
+  --border2:  #3a3a48;
+  --text:     #e8e8f0;
+  --text2:    #9090a8;
+  --text3:    #5a5a70;
+  --accent:   #6c5ce7;
+  --accent2:  #a29bfe;
+  --green:    #00b894;
+  --amber:    #fdcb6e;
+  --red:      #e17055;
+  --blue:     #74b9ff;
+  --r:        8px;
+  --card-r:   12px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+/* Inputs */
+input, select, textarea {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--r);
+  padding: 9px 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+select option { background: var(--bg3); }
+label { font-size: 12px; color: var(--text2); display: block; margin-bottom: 5px; }
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--r);
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-primary { background: var(--accent); color: #fff; padding: 8px 16px; }
+.btn-primary:hover { background: #7d6fea; }
+.btn-ghost { background: transparent; color: var(--text2); border: 1px solid var(--border); padding: 8px 14px; }
+.btn-ghost:hover { color: var(--text); border-color: var(--border2); background: var(--bg3); }
+.btn-danger { background: rgba(225,112,85,.12); color: var(--red); border: 1px solid rgba(225,112,85,.3); padding: 6px 12px; }
+
+/* Cards */
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--card-r); padding: 16px; }
+.card-sm { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 12px; }
+
+/* Grid helpers */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+/* Badges */
+.badge { display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: 500; }
+.badge-green  { background: rgba(0,184,148,.15);  color: var(--green); }
+.badge-amber  { background: rgba(253,203,110,.15); color: var(--amber); }
+.badge-red    { background: rgba(225,112,85,.15);  color: var(--red); }
+.badge-purple { background: rgba(162,155,254,.15); color: var(--accent2); }
+.badge-blue   { background: rgba(116,185,255,.15); color: var(--blue); }
+
+/* Progress bar */
+.progress-bar  { height: 6px; background: var(--bg4); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
+
+/* Section title */
+.section-title { font-size: 11px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 12px; }
+
+/* Form group */
+.form-group { margin-bottom: 14px; }
+
+/* Utilities */
+.flex       { display: flex; }
+.flex-col   { display: flex; flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-8  { gap: 8px; }
+.gap-12 { gap: 12px; }
+.mb-16  { margin-bottom: 16px; }
+.text-green  { color: var(--green); }
+.text-amber  { color: var(--amber); }
+.text-red    { color: var(--red); }
+.text-accent { color: var(--accent2); }
+.text-muted  { color: var(--text2); }
+.font-mono   { font-family: 'JetBrains Mono', monospace; }
+.text-sm     { font-size: 12px; }
+
+/* Stat card */
+.stat-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+.stat-val   { font-size: 28px; font-weight: 600; line-height: 1; }
+.stat-sub   { font-size: 11px; color: var(--text3); margin-top: 4px; }
